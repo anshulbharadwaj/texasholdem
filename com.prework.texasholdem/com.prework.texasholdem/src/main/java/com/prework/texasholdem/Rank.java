@@ -25,4 +25,8 @@ public enum Rank {
 	public int getRank() {
 		return this.value;
 	}
+	
+	public String getRankSymbol(){
+		return this.symbol;
+	}
 }

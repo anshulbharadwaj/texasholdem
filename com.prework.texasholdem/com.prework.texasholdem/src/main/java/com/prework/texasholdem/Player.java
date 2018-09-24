@@ -10,7 +10,10 @@ public class Player {
 		this.hand = new Hand();
 	}
 
-	public void showHand() {
-		this.hand.showCards();
+	public void displayHoleCards() {
+		this.hand.showHoleCards();
+	}
+	public void displayCommunityCards() {
+		this.hand.showCommunityCards();
 	}
 }

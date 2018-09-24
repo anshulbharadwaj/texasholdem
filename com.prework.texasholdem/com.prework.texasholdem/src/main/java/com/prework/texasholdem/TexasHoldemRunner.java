@@ -1,6 +1,9 @@
 package com.prework.texasholdem;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class TexasHoldemRunner {
@@ -21,8 +24,19 @@ public class TexasHoldemRunner {
 		player.hand.addHoleCards(Arrays.asList(deck.drawCard(),deck.drawCard()));
 		player.hand.addCommunityCards((Arrays.asList(deck.drawCard(),deck.drawCard(),deck.drawCard(),deck.drawCard(),deck.drawCard())));
 		
+		Map<Integer,List<Card>> mapped = new HashMap();
+		
+		mapped.put(1,player.hand.addHoleCards(Arrays.asList(deck.drawCard(),deck.drawCard())));
+		mapped.put(2,player.hand.addHoleCards(Arrays.asList(deck.drawCard(),deck.drawCard())));
+		
+		for(Map.Entry<Integer, List<Card>> entry :mapped.entrySet()){
+			System.out.println(entry.getKey()+"/" + entry.getValue().get(0).rank.getRankSymbol());
+			
+		}
+		
 		System.out.println("after deck size is: " + deck.size());
 		
-		player.showHand();
+		player.displayHoleCards();
+		player.displayCommunityCards();
 	}
 }

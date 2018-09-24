@@ -17,4 +17,8 @@ public enum Suit {
 	public int getCardSuit() {
 		return this.value;
 	}
+	
+	public String getCardSymbol(){
+		return this.symbol;
+	}
 }
